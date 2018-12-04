@@ -46,17 +46,31 @@ class ClientHandler extends Thread {
                 case "opend":
                     System.err.println("OPEN KEY CODE ");
                 lockGui.unlock();
+
+                    //UNLOCK Sound
+
+                    try {
+                        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
+                                new File("data\\unlock.wav"));
+                        Clip clip = AudioSystem.getClip();
+                        clip.open(audioInputStream);
+                        clip.start();
+                    }catch (Exception e){e.printStackTrace();}
+
+                    //////////////////
+
+
                     break;
 
                 case "lockd":
                     System.err.println("LOCK KEY CODE");
 
 lockGui.lock();
-                    //Sound
+                    //LOCK Sound
 
                     try {
                         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
-                                new File("lock.wav"));
+                                new File("data\\lock.wav"));
                         Clip clip = AudioSystem.getClip();
                         clip.open(audioInputStream);
                         clip.start();
@@ -89,10 +103,6 @@ lockGui.lock();
                     break;
 
 
-                case "RESTART":
-                    Process child3 = Runtime.getRuntime().exec("start restart.bat");
-
-                    break;
 
 
 
@@ -105,7 +115,7 @@ lockGui.lock();
                     Process child6 = Runtime.getRuntime().exec("rundll32.exe user32.dll, LockWorkStation");
                     try {
                         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
-                                new File("lock.wav"));
+                                new File("data\\winlock.wav"));
                         Clip clip = AudioSystem.getClip();
                         clip.open(audioInputStream);
                         clip.start();

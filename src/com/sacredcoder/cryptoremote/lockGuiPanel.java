@@ -40,7 +40,7 @@ Socket socket;
         info.setLocation(0,0);
         //set component bounds (only needed by Absolute Positioning)
         info.setSize(512,512);
-        info.setIcon(new ImageIcon("icon.png"));
+        info.setIcon(new ImageIcon("data\\icon.png"));
         setFocusable(true);
         info.setForeground(Color.WHITE);
 setBackground(Color.BLACK);
