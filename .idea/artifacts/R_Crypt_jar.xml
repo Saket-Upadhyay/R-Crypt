@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="R-Crypt:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/R_Crypt_jar</output-path>
+    <root id="archive" name="R-Crypt.jar">
+      <element id="module-output" name="R-Crypt" />
+    </root>
+  </artifact>
+</component>
