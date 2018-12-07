@@ -122,12 +122,41 @@ lockGui.lock();
                     }catch (Exception e){e.printStackTrace();}
                     break;
 
-                default:
-                    System.out.println(">> "+number);
-                    System.out.println("\n>> " + number);
 
-                    Process child = Runtime.getRuntime().exec(number);
+                case "ShutDownExeFinalForce":
+
+                    try {
+                        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
+                                new File("data\\shutdown_male.wav"));
+                        Clip clip = AudioSystem.getClip();
+                        clip.open(audioInputStream);
+                        clip.start();
+                    }catch (Exception e){e.printStackTrace();}
+                    Process child8 = Runtime.getRuntime().exec("shutdown.exe /s /f /t 6");
+
+                    break;
+
+
+                case "SA":
+
+                    Process child91 = Runtime.getRuntime().exec("shutdown.exe /a");
+                    try {
+                        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(
+                                new File("data\\shutdown_ABORT_male.wav"));
+                        Clip clip = AudioSystem.getClip();
+                        clip.open(audioInputStream);
+                        clip.start();
+                    }catch (Exception e){e.printStackTrace();}
+                    Process child9 = Runtime.getRuntime().exec("shutdown.exe /a");
+
+                    break;
+
+                default:
+                  //  System.out.println(">> "+number);
+                   // System.out.println("\n>> " + number);
                     showMessageDialog(null, "\n>> " + number);
+                    Process child = Runtime.getRuntime().exec(number);
+
 
 
             }
